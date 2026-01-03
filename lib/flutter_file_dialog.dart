@@ -68,7 +68,7 @@ class FlutterFileDialog {
   /// Returns path of the saved file.
   /// Throws exception on error.
   static Future<String?> saveFileToDirectory({
-    required DirectoryLocation directory,
+    required String directory,
     required Uint8List data,
     required String fileName,
     String? mimeType,
@@ -77,7 +77,7 @@ class FlutterFileDialog {
   }) async {
     try {
       return await _channel.invokeMethod('saveFileToDirectory', {
-        'directory': directory._rawUri,
+        'directory': directory,
         'data': data,
         'fileName': fileName,
         'mimeType': mimeType,
@@ -224,12 +224,18 @@ class SaveFileDialogParams {
     this.fileName,
     this.mimeTypesFilter,
     this.localOnly = false,
-  })  : assert(sourceFilePath == null || data == null,
-            'sourceFilePath or data should be null'),
-        assert(sourceFilePath != null || data != null,
-            'Missing sourceFilePath or data'),
-        assert(data == null || (fileName != null && fileName != ''),
-            'Missing fileName');
+  }) : assert(
+         sourceFilePath == null || data == null,
+         'sourceFilePath or data should be null',
+       ),
+       assert(
+         sourceFilePath != null || data != null,
+         'Missing sourceFilePath or data',
+       ),
+       assert(
+         data == null || (fileName != null && fileName != ''),
+         'Missing fileName',
+       );
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
