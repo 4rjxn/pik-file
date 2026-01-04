@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 
 /// File picking/saving dialogs for Android and iOS.
 class FlutterFileDialog {
-  static const MethodChannel _channel = MethodChannel('flutter_file_dialog');
+  static const MethodChannel _channel = MethodChannel('pik_file_channel');
 
   /// Displays a dialog for picking a file.
   ///
@@ -224,18 +224,18 @@ class SaveFileDialogParams {
     this.fileName,
     this.mimeTypesFilter,
     this.localOnly = false,
-  }) : assert(
-         sourceFilePath == null || data == null,
-         'sourceFilePath or data should be null',
-       ),
-       assert(
-         sourceFilePath != null || data != null,
-         'Missing sourceFilePath or data',
-       ),
-       assert(
-         data == null || (fileName != null && fileName != ''),
-         'Missing fileName',
-       );
+  })  : assert(
+          sourceFilePath == null || data == null,
+          'sourceFilePath or data should be null',
+        ),
+        assert(
+          sourceFilePath != null || data != null,
+          'Missing sourceFilePath or data',
+        ),
+        assert(
+          data == null || (fileName != null && fileName != ''),
+          'Missing fileName',
+        );
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{

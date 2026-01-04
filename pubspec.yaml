@@ -1,8 +1,8 @@
-name: flutter_file_dialog
+name: pik_file
 description: Dialogs for picking and saving files in Android and in iOS.
 version: 3.0.3
-homepage: https://github.com/kineapps/flutter_file_dialog
-repository: https://github.com/kineapps/flutter_file_dialog
+homepage: https://github.com/4rjxn/pik_file 
+repository: https://github.com/4rjxn/pik_file
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
@@ -28,7 +28,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.kineapps.flutter_file_dialog
+        package: com.rjxn.pik_file
         pluginClass: FlutterFileDialogPlugin
       ios:
         pluginClass: FlutterFileDialogPlugin

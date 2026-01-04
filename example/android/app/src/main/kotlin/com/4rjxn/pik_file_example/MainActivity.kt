@@ -1,4 +1,4 @@
-package com.kineapps.flutter_file_dialog_example
+package com.4rjxn.pik_file
 
 import io.flutter.embedding.android.FlutterActivity
 

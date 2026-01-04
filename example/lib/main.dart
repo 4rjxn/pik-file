@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_file_dialog/flutter_file_dialog.dart';
+import 'package:pik_file/pik_file.dart;
 
 void main() => runApp(MaterialApp(
       home: MyApp(),

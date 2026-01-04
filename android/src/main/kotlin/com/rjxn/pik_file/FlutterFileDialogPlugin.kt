@@ -3,7 +3,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-package com.kineapps.flutter_file_dialog
+package com.rjxn.pik_file
 
 import android.app.Activity
 import android.net.Uri
@@ -81,7 +81,7 @@ class FlutterFileDialogPlugin : FlutterPlugin, ActivityAware, MethodCallHandler 
     private fun doOnAttachedToEngine(messenger: BinaryMessenger) {
         Log.d(LOG_TAG, "doOnAttachedToEngine - IN")
 
-        methodChannel = MethodChannel(messenger, "flutter_file_dialog").apply {
+        methodChannel = MethodChannel(messenger, "pik_file_channel").apply {
             setMethodCallHandler(this@FlutterFileDialogPlugin)
         }
 
